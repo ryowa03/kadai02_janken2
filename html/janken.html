@@ -1,0 +1,139 @@
+
+
+
+
+
+
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+      <link rel="stylesheet" href="/css/style.css">
+    
+  </head>
+
+
+
+
+  <body>   
+    
+
+<br>
+<br>
+
+<div class = toptext>
+    <h2>カービィ30周年おめでとう🎉🎉</h2>
+
+
+    <p id="result"></p>
+
+    <div id="computerChoiceImage"></div>
+
+    <p>相手: <span id="computerChoice"></span></p>
+
+ </div>
+   
+
+<div class = myturn>
+   <p> <span id="userChoice"></span></p>  
+   <div class = jankenimg>
+      <img src="/contents/guu.jpeg" alt="グー" onclick="playJanken('グー')" class = "moveimage1" >
+      <img src="/contents/choki.jpeg" alt="チョキ" onclick="playJanken('チョキ')" class = "moveimage2" >
+      <img src="/contents/pa-.jpeg" alt="パー" onclick="playJanken('パー')" class = "moveimage3" >
+  </div>
+</div>
+
+
+<script src="animation.js"></script>
+
+
+
+    <script>
+   function playJanken(userChoice) {
+  const choices = ["グー", "チョキ", "パー"];
+  const computerChoice = choices[Math.floor(Math.random() * 3)];
+  
+
+ // コンピューターのランダムな選択に対応する画像ファイルのファイルパスを定義
+ const computerChoiceImages = {
+    グー:  "/contents/ぐー.png",
+    チョキ: "/contents/チー.png",
+    パー: "/contents/パー.png",
+  };
+
+  
+
+  const computerChoiceImage = document.getElementById("computerChoiceImage");
+
+  // コンピューターのランダムな選択を取得
+  const computerChoiceImageSrc = computerChoiceImages[computerChoice];
+
+  // コンピューターの画像を表示
+  computerChoiceImage.innerHTML = `<img src="${computerChoiceImageSrc}" alt="${computerChoice}" class = computerimage>`;
+  
+
+
+
+
+  document.getElementById("userChoice").textContent = userChoice;
+  document.getElementById("computerChoice").textContent = computerChoice;
+
+  if (userChoice === computerChoice) {
+    document.getElementById("result").textContent = "【DRAW】";
+  } else if (
+    (userChoice === "グー" && computerChoice === "チョキ") ||
+    (userChoice === "チョキ" && computerChoice === "パー") ||
+    (userChoice === "パー" && computerChoice === "グー")
+  ) {
+    document.getElementById("result").textContent = "【WIN】";
+  } else {
+    document.getElementById("result").textContent = "【LOSE】";
+  }
+}
+    </script>
+
+
+<div class = bgmcontents>
+  <button id="bgmButton">BGM</button>
+</div>
+
+<audio id="bgm" src="/contents/Green Greens.mp3" loop></audio>
+
+<script src="bgmControl.js"></script>
+
+
+<script>
+const bgmButton = document.getElementById("bgmButton");
+const bgm = document.getElementById("bgm");
+
+let isPlaying = false;
+
+bgmButton.addEventListener("click", function() {
+  if (isPlaying) {
+    // BGMを停止
+    bgm.pause();
+    isPlaying = false;
+    bgmButton.textContent = "BGM再生";
+  } else {
+    // BGMを再生
+    bgm.play();
+    isPlaying = true;
+    bgmButton.textContent = "BGM停止";
+  }
+});
+
+</script>
+
+
+<br>
+<br>
+<br>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  </body>

@@ -1,0 +1,168 @@
+
+
+
+
+body{
+    /* background-color: pink; */
+    background-image: url(/contents/KB２.jpg);
+
+}
+
+
+.toptext{
+    
+    text-align: center;
+}
+
+
+#result{
+
+font-size: 40px;
+color: aliceblue;
+}
+
+
+
+.computerimage{
+width: 270px;
+height: 200px;
+}
+
+
+
+/* 相手がぞう一のほんの微調整 */
+/* #computerChoiceImage {
+margin-left: 60px;
+  
+  } */
+
+
+
+
+
+.myturn{
+    margin-top: 120px;
+    text-align: center;
+}
+
+
+.jankenimg{
+    display: flex; 
+ margin-left: 475px;
+}
+
+
+
+
+img:hover {
+    border: 2px solid transparent;
+    animation: flashBorder 0.5s infinite alternate;
+  }
+  
+  @keyframes flashBorder {
+    0% {
+      border: 2px solid transparent;
+    }
+    50% {
+      border: 5px solid #ece8e8f0; /* 赤いボーダー */
+    }
+    100% {
+      border: 2px solid transparent;
+    }
+  }
+
+    
+
+  .moveimage1{
+    width: 200px;
+    height: 200px;
+    margin-right: 160px;
+    }
+    .moveimage2{
+        width: 200px;
+        height: 200px;
+        margin-right: 160px;
+        }
+        .moveimage3{
+            width: 200px;
+            height: 200px;
+            margin-right: 140px;
+            }
+    
+   
+
+.moveimage1 {
+        animation: floatAnimation 5s ease infinite; /* アニメーションの設定 */
+      }
+      
+      @keyframes floatAnimation {
+        0%, 100% {
+          transform: translateY(0) translateX(0); /* 垂直・水平方向に移動しない状態 */
+        }
+        25% {
+          transform: translateY(-10px) translateX(10px); /* 上に少し移動 */
+        }
+        50% {
+          transform: translateY(0) translateX(0); /* 元の位置に戻る */
+        }
+        75% {
+          transform: translateY(10px) translateX(-10px); /* 下に少し移動 */
+        }
+      }
+
+
+
+      .moveimage2 {
+        animation: floatAnimation 10s ease infinite; /* アニメーションの設定 */
+      }
+      
+      @keyframes floatAnimation {
+        0%, 25% {
+          transform: translateY(0) translateX(0); /* 垂直・水平方向に移動しない状態 */
+        }
+        75% {
+          transform: translateY(-20px) translateX(20px); /* 上に少し移動 */
+        }
+        25% {
+          transform: translateY(0) translateX(0); /* 元の位置に戻る */
+        }
+        150% {
+          transform: translateY(100px) translateX(-80px); /* 下に少し移動 */
+        }
+      }
+
+
+
+
+.moveimage3 {
+    animation: floatAnimation 5s ease infinite; /* アニメーションの設定 */
+  }
+  
+  @keyframes floatAnimation {
+    0%, 100% {
+      transform: translateY(0) translateX(0); /* 垂直・水平方向に移動しない状態 */
+    }
+    25% {
+      transform: translateY(-10px) translateX(10px); /* 上に少し移動 */
+    }
+    50% {
+      transform: translateY(0) translateX(0); /* 元の位置に戻る */
+    }
+    75% {
+      transform: translateY(10px) translateX(-10px); /* 下に少し移動 */
+    }
+  }
+
+
+
+
+
+.bgmcontents{
+    margin-top: 80px;
+    display: flex; 
+    justify-content: center;
+}
+
+#bgmButton{
+    background-color: pink;
+}
